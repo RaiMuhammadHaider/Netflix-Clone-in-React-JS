@@ -1,0 +1,161 @@
+/* Login.css - Netflix style */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("/background_banner.jpg"); /* assuming image is in public/ */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.login::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+}
+
+.login-logo {
+  width: 150px;
+  margin-bottom: 10px;
+  z-index: 2;
+}
+
+.login-form {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 50px 40px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 350px;
+  color: white;
+  z-index: 2;
+  /* padding-bottom: 30px; */
+}
+.switch-account {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.switch-account p {
+  margin: 6px 0;
+   
+}
+.switch-account span {
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: color 0.3s;}
+
+.switch-account .link {
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: color 0.3s;
+}
+
+.switch-account .link:hover {
+  color: #e50914; /* Netflix red */
+  text-decoration: underline;
+}
+
+.help-link {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.help-link:hover {
+  color: #e50914;
+}
+
+
+.login-form h1 {
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  background: #333;
+  color: white;
+}
+
+.login-form input::placeholder {
+  color: #8c8c8c;
+}
+
+.login-form button {
+  background: #e50914;
+  border: none;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-form button:hover {
+  background: #f6121d;
+}
+
+.form-help {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+.form-help .remember {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.form-help input[type="checkbox"] {
+  accent-color: #b3b3b3;
+  cursor: pointer;
+}
+
+.form-help p {
+  cursor: pointer;
+}
+
+.form-help p:hover {
+  text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .login-form {
+    padding: 40px 20px;
+    max-width: 90%;
+  }
+
+  .login-logo {
+    width: 120px;
+  }
+}
