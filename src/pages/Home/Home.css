@@ -22,10 +22,15 @@
 .hero::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.2) 60%);
+  inset: 0; /* shorthand for top/right/bottom/left: 0 */
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.7) 20%,  /* dark bottom */
+    rgba(0,0,0,0.2) 60%,  /* fade in middle */
+    rgba(0,0,0,0) 100%    /* transparent top */
+  );
+  pointer-events: none; /* lets you still click things under it */
 }
-
 /* Caption overlay */
 /* .hero-caption {
   position: absolute;
