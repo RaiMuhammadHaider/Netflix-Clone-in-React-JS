@@ -18,52 +18,41 @@
   object-fit: cover;
 }
 
-/* Dark overlay for better text contrast */
+/* Dark overlay */
 .hero::after {
   content: '';
   position: absolute;
-  inset: 0; /* shorthand for top/right/bottom/left: 0 */
+  inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.7) 20%,  /* dark bottom */
-    rgba(0,0,0,0.2) 60%,  /* fade in middle */
-    rgba(0,0,0,0) 100%    /* transparent top */
+    rgba(0,0,0,0.7) 20%,
+    rgba(0,0,0,0.2) 60%,
+    rgba(0,0,0,0) 100%
   );
-  pointer-events: none; /* lets you still click things under it */
+  pointer-events: none;
 }
-/* Caption overlay */
-/* .hero-caption {
-  position: absolute;
-  bottom: 28%;
-  left: 50px;
-  max-width: 600px;
-  z-index: 10;
-} */
 
+/* Caption overlay */
 .hero-caption {
   position: absolute;
-  bottom: 28%;
+  bottom: 14%;
   left: 40px;
-  max-width: 400px;   /* smaller width */
+  max-width: 400px;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 8px;           /* less spacing */
-  transform: scale(0.9); /* shrink entire block a bit */
+  gap: 8px;
+  transform: scale(0.9);
   transform-origin: left bottom;
 }
-/* .hero-title {
-  width: 450px;
-  margin-bottom: 20px;
-} */
+
 .hero-title {
-  width: 250px;       /* smaller width */
-  margin-bottom: 15px; /* less margin */
+  width: 250px;
+  margin-bottom: 15px;
 }
 
 .hero-caption p {
   font-size: 18px;
-  /* line-height: 1.5; */
   margin-bottom: 10px;
   color: #e5e5e5;
   text-shadow: 0 2px 4px rgba(0,0,0,0.8);
@@ -72,6 +61,7 @@
 /* Buttons */
 .hero-btn {
   display: flex;
+  flex-wrap: wrap; /* wrap on small screens */
   gap: 12px;
   margin-bottom: 30px;
 }
@@ -110,16 +100,117 @@
 .btn img {
   width: 20px;
 }
-.movie-list{
-padding-top: 20px;
-margin-top: -100px;
-position: relative;
-z-index: 5; /* ensures it sits above hero fade */
-margin-bottom: 80px;
-display: flex;
-flex-direction: column;
-gap: 40px;
 
+.movie-list {
+  padding-top: 100px;
+  margin-top: -100px;
+  position: relative;
+  z-index: 5;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 
+/* ---------------- RESPONSIVE DESIGN ---------------- */
 
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero-caption {
+    left: 30px;
+    max-width: 300px;
+    transform: none;         /* remove scaling */
+  }
+
+  .hero-title {
+    width: 200px;
+  }
+
+  .hero-caption p {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    min-height: 480px;       /* prevent hero collapse */
+  }
+
+  .hero-caption {
+    bottom: 20%;
+    left: 20px;
+    max-width: 250px;
+  }
+
+  .hero-title {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+
+  .hero-caption p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .hero-btn {
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 7px 15px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .hero {
+    height: 70vh;
+    min-height: 400px;      /* safety for ultra small screens */
+  }
+
+  .hero-caption {
+    bottom: 15%;
+    left: 15px;
+    max-width: 200px;
+  }
+
+  .hero-title {
+    width: 150px;
+  }
+
+  .hero-caption p {
+    font-size: 12px;
+  }
+
+  .hero-btn {
+    flex-direction: column;   /* stack buttons vertically */
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    width: 100%;              /* full-width buttons */
+    max-width: 180px;         /* prevent too wide buttons */
+  }
+
+  .btn img {
+    width: 16px;
+  }
+
+  .movie-list {
+    gap: 20px;
+    margin-bottom: 50px;
+  }
 }

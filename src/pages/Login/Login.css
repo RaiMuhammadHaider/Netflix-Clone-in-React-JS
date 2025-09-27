@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("/background_banner.jpg"); /* assuming image is in public/ */
+  background-image: url("/background_banner.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,8 +34,8 @@
   max-width: 350px;
   color: white;
   z-index: 2;
-  /* padding-bottom: 30px; */
 }
+
 .switch-account {
   margin-top: 20px;
   text-align: center;
@@ -45,15 +45,9 @@
 
 .switch-account p {
   margin: 6px 0;
-   
 }
-.switch-account span {
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  margin-left: 4px;
-  transition: color 0.3s;}
 
+.switch-account span,
 .switch-account .link {
   color: white;
   font-weight: 500;
@@ -62,8 +56,9 @@
   transition: color 0.3s;
 }
 
+.switch-account span:hover,
 .switch-account .link:hover {
-  color: #e50914; /* Netflix red */
+  color: #e50914;
   text-decoration: underline;
 }
 
@@ -75,7 +70,6 @@
 .help-link:hover {
   color: #e50914;
 }
-
 
 .login-form h1 {
   margin-bottom: 25px;
@@ -145,22 +139,76 @@
 
 .form-help p:hover {
   text-decoration: underline;
-    cursor: pointer;
 }
 
-/* Responsive */
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .login-logo {
+    width: 130px;
+  }
+
+  .login-form {
+    padding: 40px 30px;
+    max-width: 320px;
+  }
+
+  .login-form h1 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
   .login-form {
-    padding: 40px 20px;
+    padding: 30px 20px;
     max-width: 90%;
   }
 
   .login-logo {
-    width: 120px;
+    width: 110px;
+  }
+
+  .login-form h1 {
+    font-size: 24px;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .switch-account {
+    font-size: 13px;
   }
 }
 
-.loading_spinner{
+/* Small Mobile */
+@media (max-width: 400px) {
+  .login-form {
+    padding: 20px 15px;
+  }
+
+  .login-form h1 {
+    font-size: 20px;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .form-help {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.loading_spinner {
   position: fixed;
   top: 0;
   left: 0;

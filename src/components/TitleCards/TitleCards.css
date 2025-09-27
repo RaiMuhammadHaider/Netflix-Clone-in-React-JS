@@ -4,7 +4,7 @@
 }
 
 .titlecards h2 {
-  margin-bottom: 15px;
+  margin-bottom: 16px 122px 17px 122px;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -105,7 +105,7 @@
 
 .titlecards h2 {
   font-size: 1.4rem;
-  margin: 0 0 15px 5px;
+  margin: 20px;
   font-weight: 600;
   color: #fff;
 }
@@ -158,4 +158,23 @@
   font-weight: 500;
   color: #e5e5e5;
   background-color: #141414;
+}
+/* Mobile layout */
+@media (max-width: 600px) {
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    gap: 12px;
+    overflow: hidden; /* disable scroll */
+  }
+
+  .card {
+    flex: unset;   /* remove flex sizing from desktop */
+    width: 100%;   /* full width in grid */
+  }
+
+  .movie-img {
+    height: auto;        /* allow natural aspect ratio */
+    object-fit: contain; /* show full image without cropping */
+  }
 }
