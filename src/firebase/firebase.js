@@ -3,12 +3,14 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { createUserWithEmailAndPassword, getAuth, signOut, signInWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { toast } from "react-toastify";
 // import { createUserWithEmailAndPassword, getAuth, signOut, signInWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC3iDs0sX0kG7IPAN2mba0ScnRrFnLhrWM",
   authDomain: "netflixconebyhaider.firebaseapp.com",
-  projectId: "netflixconebyhaider",
+//   projectId: "netflixconebyhaider",
+  projectId: "project-421091618575",
   storageBucket: "netflixconebyhaider.firebasestorage.app",
   messagingSenderId: "421091618575",
   appId: "1:421091618575:web:74c496a6c37982b22b187a",
@@ -33,7 +35,7 @@ const signup = async (email, password, name) => {
         
     } catch (error) {
         console.log(error)
-        alert(error.message)
+        toast.error(error.code.split('/')[1].split('-').join(' '))
         
     }
 }
@@ -44,7 +46,7 @@ const login = async (email, password) => {
         
     } catch (error) {
         console.log(error)
-        alert(error.message)
+        toast.error(error.code.split('/')[1].split('-').join(' '))
     }
 }
 
