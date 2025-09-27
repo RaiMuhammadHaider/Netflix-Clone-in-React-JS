@@ -111,3 +111,8 @@
 .nav_profile:hover .dropdown {
   display: block;
 }
+.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
