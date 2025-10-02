@@ -9,16 +9,20 @@ import { logout } from '../../firebase/firebase'
 
 const Navbar = () => {
   const navRef = useRef()
-  useEffect(()=>{
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 100){
-        navRef.current.classList.add('scrolled');
-      } else {
-        navRef.current.classList.remove('scrolled');
-      }
-    });
-  }, []);
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      navRef.current?.classList.add('scrolled');
+    } else {
+      navRef.current?.classList.remove('scrolled');
+    }
+  };
 
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
   return (
     <div className='navbar' ref={navRef}>
       <div className="navbar-left">

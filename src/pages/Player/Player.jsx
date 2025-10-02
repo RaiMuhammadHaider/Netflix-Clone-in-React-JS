@@ -30,7 +30,7 @@ useEffect(()=>{
      <Link to = '/' >
       <img src={back_arrow_icon} className='back-arrow-icon' alt="" />
       </Link>
-      <iframe src={`https://www.youtube.com/embed/${apiData.key} `}  frameborder="0"
+      <iframe src={`https://www.youtube.com/embed/${apiData.key} `} 
       allowFullScreen height= '90%' width='90%' > </iframe>
       <div className="player-info">
         <p>{apiData.published_at.slice(0,10)}</p>
